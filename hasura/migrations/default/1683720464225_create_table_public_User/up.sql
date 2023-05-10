@@ -1,0 +1,1 @@
+CREATE TABLE "public"."User" ("id" serial NOT NULL, "userName" text NOT NULL, "email" text NOT NULL, "password" text NOT NULL, "photos_id" integer NOT NULL, PRIMARY KEY ("id") , FOREIGN KEY ("photos_id") REFERENCES "public"."photos"("id") ON UPDATE restrict ON DELETE restrict, UNIQUE ("email"));
