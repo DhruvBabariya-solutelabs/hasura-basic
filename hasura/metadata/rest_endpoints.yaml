@@ -1,0 +1,9 @@
+- comment: Retrieve a single photo using its id
+  definition:
+    query:
+      collection_name: allowed-queries
+      query_name: single_photo_query
+  methods:
+    - GET
+  name: single_photo_query
+  url: photo

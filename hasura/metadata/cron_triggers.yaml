@@ -1,0 +1,19 @@
+- name: abandoned_carts_notification
+  webhook: https://us-central1-websitecloud-352908.cloudfunctions.net/docs-scheduled-trigger-sample-app
+  schedule: '*/10 * * * *'
+  include_in_metadata: true
+  payload:
+    endpoint: https://witty-cod-55.hasura.app/v1/graphql
+    secret: lRtzOJrNpl4NY1KUvaKLzn3yzjfGJHCNWzttsU7QIYBzkmQo2J70A049GcP9CDnS
+  comment: ""
+  request_transform:
+    body:
+      action: transform
+      template: |-
+        {
+          "payload": {{$body.payload}}
+        }
+    method: POST
+    query_params: {}
+    template_engine: Kriti
+    version: 2

@@ -1,0 +1,38 @@
+table:
+  name: comment
+  schema: public
+object_relationships:
+  - name: comment_photo
+    using:
+      foreign_key_constraint_on: photo_id
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        id:
+          _eq: X-Hasura-User-Id
+      columns:
+        - comment
+        - photo_id
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - id
+        - photo_id
+        - comment
+        - created_at
+      filter:
+        id:
+          _eq: X-Hasura-User-Id
+event_triggers:
+  - name: notify_about_comment
+    definition:
+      enable_manual: false
+      insert:
+        columns: '*'
+    retry_conf:
+      interval_sec: 10
+      num_retries: 0
+      timeout_sec: 60
+    webhook: https://httpbin.org/post

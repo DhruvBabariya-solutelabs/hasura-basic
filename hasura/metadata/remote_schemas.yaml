@@ -1,0 +1,6 @@
+- name: countries_api
+  definition:
+    url: https://countries.trevorblades.com/graphql
+    timeout_seconds: 60
+    customization: {}
+  comment: ""

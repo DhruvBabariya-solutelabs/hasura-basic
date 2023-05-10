@@ -1,0 +1,21 @@
+actions:
+  - name: insert_comments
+    definition:
+      kind: synchronous
+      handler: https://httpbin.org/post
+  - name: login
+    definition:
+      kind: synchronous
+      handler: https://hasura-actions-demo.glitch.me/login
+    permissions:
+      - role: user
+custom_types:
+  enums: []
+  input_objects:
+    - name: comment_data
+    - name: SignupCredentials
+  objects:
+    - name: comment_ActionType
+    - name: User
+    - name: LoginResponse
+  scalars: []

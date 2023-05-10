@@ -1,0 +1,12 @@
+- name: allowed-queries
+  definition:
+    queries:
+      - name: single_photo_query
+        query: |
+          query single_photo_query {
+            photos_by_pk(id: 1) {
+              id
+              description
+              photo_url
+            }
+          }

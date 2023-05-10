@@ -1,0 +1,7 @@
+version: 3
+endpoint: https://witty-cod-55.hasura.app/
+admin_secret: lRtzOJrNpl4NY1KUvaKLzn3yzjfGJHCNWzttsU7QIYBzkmQo2J70A049GcP9CDnS
+metadata_directory: metadata
+actions:
+  kind: synchronous
+  handler_webhook_baseurl: http://localhost:3000

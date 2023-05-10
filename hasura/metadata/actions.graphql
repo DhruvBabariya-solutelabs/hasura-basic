@@ -1,0 +1,41 @@
+type Mutation {
+  insert_comments(
+    arg1: comment_data
+  ): comment_ActionType
+}
+
+type Mutation {
+  login(
+    username: String!
+    password: String!
+  ): LoginResponse
+}
+
+input comment_data {
+  comment: String!
+  photo_id: Int!
+}
+
+input SignupCredentials {
+  email: String!
+  password: String!
+  displayName: String
+}
+
+type comment_ActionType {
+  comment: String!
+  created_at: timestamptz!
+  id: Int!
+  photo_id: Int!
+}
+
+type User {
+  id: Int!
+  email: String!
+  displayName: String
+}
+
+type LoginResponse {
+  accessToken: String!
+}
+
